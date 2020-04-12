@@ -19,10 +19,13 @@ metadata:
   name: maven-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: maven
   template:
     metadata:
       labels:
-        app: maven
+        name: maven
     spec:
       containers:
         - name: maven
